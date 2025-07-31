@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>QwertyVM - Главная</title>
+<style>
+  body { font-family: Arial, sans-serif; margin:0; padding:0; }
+  header { background:#333; color:#fff; padding:10px; text-align:center; }
+  #langModal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7);
+               justify-content:center; align-items:center; }
+  #langModal.active { display:flex; }
+  #langModalContent { background:#fff; padding:20px; border-radius:8px; max-width:300px; text-align:center; }
+  select { width: 100%; padding: 8px; font-size: 16px; margin: 10px 0; }
+  button { padding:10px 20px; font-size:16px; cursor:pointer; }
+  nav { background:#555; color:#fff; padding:10px; display:flex; justify-content:space-between; align-items:center; }
+  nav select { width: auto; margin: 0; }
+  @media(max-width:600px) {
+    nav { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<header><h1 id="title">QwertyVM</h1></header>
+
+<nav>
+  <div>Меню</div>
+  <select id="languageSwitcher" aria-label="Select language">
+    <option value="en">English</option>
+    <option value="ru">Русский</option>
+    <option value="uk">Українська</option>
+    <option value="pt">Português</option>
+    <option value="de">Deutsch</option>
+    <option value="fr">Français</option>
+    <option value="labubu">Labubu</option>
+    <option value="dnc">До нашей эры</option>
+  </select>
+</nav>
+
+<main>
+  <p id="welcomeText">Welcome to QwertyVM!</p>
+</main>
+
+<div id="langModal" role="dialog" aria-modal="true" aria-labelledby="langModalLabel">
+  <div id="langModalContent">
+    <h2 id="langModalLabel">Please select your language</h2>
+    <select id="modalLanguageSwitcher" aria-label="Select language">
+      <option value="en">English</option>
+      <option value="ru">Русский</option>
+      <option value="uk">Українська</option>
+      <option value="pt">Português</option>
+      <option value="de">Deutsch</option>
+      <option value="fr">Français</option>
+      <option value="labubu">Labubu</option>
+      <option value="dnc">До нашей эры</option>
+    </select>
+    <button id="confirmLang">Confirm</button>
+  </div>
+</div>
+
+<script src="js/lang.js"></script>
+</body>
+</html>
